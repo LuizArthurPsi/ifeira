@@ -1,6 +1,7 @@
 import React from 'react';
 import { StatusBar } from 'react-native';
 import { ThemeProvider } from 'styled-components/native';
+import { NavigationContainer } from '@react-navigation/native';
 
 import theme from './global/styles/theme';
 
@@ -11,7 +12,9 @@ export default function App() {
         <>
             <StatusBar hidden={true} />
             <ThemeProvider theme={theme}>
-                <SignIn />
+                <NavigationContainer>
+                    <SignIn />
+                </NavigationContainer>
             </ThemeProvider>
         </>
     );
