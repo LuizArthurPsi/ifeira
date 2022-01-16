@@ -4,11 +4,14 @@ import {
     Keyboard,
     TouchableWithoutFeedback,
     Alert,
+    Platform,
 } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
+//O Logo da a aplicação não veio com o design no formato adequado
 import IconLogo from '../../assets/logo.svg';
 import IconAjust from '../../assets/logo2.svg';
-//O Logo da a aplicação não veio com o design no formato adequado
+
 import Button from '../../components/Button';
 import Input from '../../components/Input';
 
@@ -28,13 +31,28 @@ import {
 
 export default function SignIn() {
     const [option, setOption] = useState<'login' | 'signup'>('login');
+    const navigation = useNavigation();
 
     function handleOptionChange(optionSelected: 'login' | 'signup') {
         setOption(optionSelected);
     }
 
+    function handleSignIn() {
+        if (option === 'login') {
+            navigation.navigate('Home');
+        } else {
+            Alert.alert(
+                'Sucess',
+                'Your account has been successfully created.',
+            );
+        }
+    }
+
     return (
-        <KeyboardAvoidingView behavior="position" enabled>
+        <KeyboardAvoidingView
+            behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+            enabled
+        >
             <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
                 <Container>
                     <Header>
@@ -129,7 +147,7 @@ export default function SignIn() {
                         )}
                         <Button
                             title={option === 'login' ? 'Login' : 'Signup'}
-                            onPress={() => {}}
+                            onPress={handleSignIn}
                         />
                     </Content>
                 </Container>

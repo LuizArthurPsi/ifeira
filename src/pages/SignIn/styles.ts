@@ -16,7 +16,7 @@ export const Header = styled.View`
     background-color: ${({ theme }) => theme.colors.background_light};
 
     width: 100%;
-    height: 300px;
+    height: ${RFValue(300)}px;
 
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
