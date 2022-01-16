@@ -1,9 +1,31 @@
 import React, { useState } from 'react';
+import {
+    Keyboard,
+    TouchableWithoutFeedback,
+    KeyboardAvoidingView,
+    ScrollView,
+    Platform,
+} from 'react-native';
 
 import IconLogo from '../../assets/logo.svg';
 import IconAjust from '../../assets/logo2.svg';
+import Button from '../../components/Button';
+import Input from '../../components/Input';
 
-import { Container, Header, Option, OptionTitle, Options } from './styles';
+import KeyboardAvoidingWrapper from '../../components/KeyboardAvoidingWrapper';
+
+import {
+    Container,
+    Header,
+    Option,
+    OptionTitle,
+    Options,
+    Content,
+    InputTitle,
+    ForgotPassword,
+    ForgotPasswordText,
+    Wrapper,
+} from './styles';
 
 export default function SignIn() {
     const [option, setOption] = useState<'login' | 'signup'>('login');
@@ -18,15 +40,19 @@ export default function SignIn() {
                 <IconLogo
                     width={131}
                     height={162}
-                    style={{ position: 'absolute', top: 103, left: 136 }}
+                    style={{
+                        position: 'absolute',
+                        left: 136,
+                        top: 98,
+                    }}
                 />
                 <IconAjust
                     width={59}
                     height={115}
                     style={{
                         position: 'absolute',
-                        top: 139,
                         left: 226,
+                        top: 134,
                     }}
                 />
                 <Options>
@@ -48,6 +74,32 @@ export default function SignIn() {
                     </Option>
                 </Options>
             </Header>
+            <Content>
+                <Wrapper>
+                    <InputTitle>Email address</InputTitle>
+                    <Input
+                        name="email"
+                        autoCapitalize="none"
+                        autoCorrect={false}
+                        keyboardType="email-address"
+                        maxLength={30}
+                    />
+                    <InputTitle>Password</InputTitle>
+                    <Input
+                        name="senha"
+                        autoCorrect={false}
+                        autoCapitalize="none"
+                        secureTextEntry
+                        maxLength={25}
+                    />
+                    <ForgotPassword onPress={() => {}}>
+                        <ForgotPasswordText>
+                            Forgot passcode?
+                        </ForgotPasswordText>
+                    </ForgotPassword>
+                </Wrapper>
+                <Button title="Login" />
+            </Content>
         </Container>
     );
 }
