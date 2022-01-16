@@ -9,11 +9,10 @@ interface ButtonProps extends RectButtonProps {
 export const Container = styled(RectButton)<ButtonProps>`
     width: 100%;
     height: 60px;
-    border-radius: 30px;
+    border-radius: 26px;
 
     justify-content: center;
     align-items: center;
-
 
     background-color:${({ color, theme }) => color ? color : theme.colors.primary_color_item};
 `;

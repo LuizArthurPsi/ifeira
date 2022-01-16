@@ -1,22 +1,21 @@
 import React, { useState } from 'react';
 import {
+    KeyboardAvoidingView,
     Keyboard,
     TouchableWithoutFeedback,
-    KeyboardAvoidingView,
-    ScrollView,
-    Platform,
+    Alert,
 } from 'react-native';
 
 import IconLogo from '../../assets/logo.svg';
 import IconAjust from '../../assets/logo2.svg';
+//O Logo da a aplicação não veio com o design no formato adequado
 import Button from '../../components/Button';
 import Input from '../../components/Input';
-
-import KeyboardAvoidingWrapper from '../../components/KeyboardAvoidingWrapper';
 
 import {
     Container,
     Header,
+    HeaderTop,
     Option,
     OptionTitle,
     Options,
@@ -24,7 +23,7 @@ import {
     InputTitle,
     ForgotPassword,
     ForgotPasswordText,
-    Wrapper,
+    Section,
 } from './styles';
 
 export default function SignIn() {
@@ -35,71 +34,106 @@ export default function SignIn() {
     }
 
     return (
-        <Container>
-            <Header>
-                <IconLogo
-                    width={131}
-                    height={162}
-                    style={{
-                        position: 'absolute',
-                        left: 136,
-                        top: 98,
-                    }}
-                />
-                <IconAjust
-                    width={59}
-                    height={115}
-                    style={{
-                        position: 'absolute',
-                        left: 226,
-                        top: 134,
-                    }}
-                />
-                <Options>
-                    <Option
-                        active={option === 'login'}
-                        onPress={() => handleOptionChange('login')}
-                    >
-                        <OptionTitle active={option === 'login'}>
-                            Login
-                        </OptionTitle>
-                    </Option>
-                    <Option
-                        active={option === 'signup'}
-                        onPress={() => handleOptionChange('signup')}
-                    >
-                        <OptionTitle active={option === 'signup'}>
-                            Sign-up
-                        </OptionTitle>
-                    </Option>
-                </Options>
-            </Header>
-            <Content>
-                <Wrapper>
-                    <InputTitle>Email address</InputTitle>
-                    <Input
-                        name="email"
-                        autoCapitalize="none"
-                        autoCorrect={false}
-                        keyboardType="email-address"
-                        maxLength={30}
-                    />
-                    <InputTitle>Password</InputTitle>
-                    <Input
-                        name="senha"
-                        autoCorrect={false}
-                        autoCapitalize="none"
-                        secureTextEntry
-                        maxLength={25}
-                    />
-                    <ForgotPassword onPress={() => {}}>
-                        <ForgotPasswordText>
-                            Forgot passcode?
-                        </ForgotPasswordText>
-                    </ForgotPassword>
-                </Wrapper>
-                <Button title="Login" />
-            </Content>
-        </Container>
+        <KeyboardAvoidingView behavior="position" enabled>
+            <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+                <Container>
+                    <Header>
+                        <IconLogo
+                            width={131}
+                            height={162}
+                            style={{
+                                position: 'absolute',
+                                left: 136,
+                                top: 70,
+                            }}
+                        />
+                        <IconAjust
+                            width={59}
+                            height={115}
+                            style={{
+                                position: 'absolute',
+                                left: 226,
+                                top: 106,
+                            }}
+                        />
+                        <HeaderTop>
+                            <Options>
+                                <Option
+                                    active={option === 'login'}
+                                    onPress={() => handleOptionChange('login')}
+                                >
+                                    <OptionTitle active={option === 'login'}>
+                                        Login
+                                    </OptionTitle>
+                                </Option>
+                                <Option
+                                    active={option === 'signup'}
+                                    onPress={() => handleOptionChange('signup')}
+                                >
+                                    <OptionTitle active={option === 'signup'}>
+                                        Sign-up
+                                    </OptionTitle>
+                                </Option>
+                            </Options>
+                        </HeaderTop>
+                    </Header>
+                    <Content>
+                        {option === 'login' ? (
+                            <Section>
+                                <InputTitle>Email address</InputTitle>
+                                <Input
+                                    name="email"
+                                    autoCapitalize="none"
+                                    autoCorrect={false}
+                                    keyboardType="email-address"
+                                    maxLength={30}
+                                />
+                                <InputTitle>Password</InputTitle>
+                                <Input
+                                    name="senha"
+                                    autoCorrect={false}
+                                    autoCapitalize="none"
+                                    secureTextEntry
+                                    maxLength={30}
+                                />
+                                <ForgotPassword onPress={() => {}}>
+                                    <ForgotPasswordText>
+                                        Forgot passcode?
+                                    </ForgotPasswordText>
+                                </ForgotPassword>
+                            </Section>
+                        ) : (
+                            <Section>
+                                <InputTitle>Email address</InputTitle>
+                                <Input
+                                    name="email"
+                                    autoCapitalize="none"
+                                    autoCorrect={false}
+                                    keyboardType="email-address"
+                                    maxLength={30}
+                                />
+                                <InputTitle>Password</InputTitle>
+                                <Input
+                                    name="senha"
+                                    autoCorrect={false}
+                                    autoCapitalize="none"
+                                    secureTextEntry
+                                    maxLength={30}
+                                />
+                                <ForgotPassword onPress={() => {}}>
+                                    <ForgotPasswordText>
+                                        Forgot passcode?
+                                    </ForgotPasswordText>
+                                </ForgotPassword>
+                            </Section>
+                        )}
+                        <Button
+                            title={option === 'login' ? 'Login' : 'Signup'}
+                            onPress={() => {}}
+                        />
+                    </Content>
+                </Container>
+            </TouchableWithoutFeedback>
+        </KeyboardAvoidingView>
     );
 }

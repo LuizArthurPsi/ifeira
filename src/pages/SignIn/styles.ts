@@ -1,20 +1,15 @@
 import styled, {css} from 'styled-components/native';
 import { RFValue } from 'react-native-responsive-fontsize';
-import { Platform, TouchableOpacity } from 'react-native';
+import { TouchableOpacity } from 'react-native';
 
 interface OptionProps {
     active: boolean;
 }
 
 export const Container = styled.View`
+    width: 100%;
     background-color: ${({ theme }) => theme.colors.background};
 
-    flex: 1;
-
-    align-items: center;
-
-    border-radius: 20px;
-    padding: 0 0 ${Platform.OS === 'android' ? 50 : 40}px;
 `;
 
 export const Header = styled.View`
@@ -25,7 +20,13 @@ export const Header = styled.View`
 
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
+    align-items: center;
     justify-content: flex-end;
+
+`;
+
+export const HeaderTop = styled.View`
+    width: 100%;
 `;
 
 export const Options = styled.View`
@@ -54,14 +55,14 @@ margin-bottom: 16px;
 `;
 
 export const Content = styled.View`
-width: 100%;
-height: 100%;
 background-color: ${({ theme }) => theme.colors.background};
-padding: 50px 50px 0;
+padding: 50px 50px 700px;
+justify-content: space-between;
+
 `;
 
-export const Wrapper = styled.View`
-margin-bottom: ${RFValue(60)}px;
+export const Section = styled.View`
+height: 50%;
 `;
 
 export const InputTitle = styled.Text`
