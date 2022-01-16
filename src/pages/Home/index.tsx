@@ -23,7 +23,7 @@ export default function Home() {
             <Header>
                 <HeaderTop>
                     <IconButton onPress={handleTabMenu}>
-                        <IconTabMenu width={22} height={15} />
+                        <IconTabMenu width={22} height={15} fill="#000000" />
                     </IconButton>
                     <IconButton onPress={handleCart}>
                         <IconCart width={24} height={24} />

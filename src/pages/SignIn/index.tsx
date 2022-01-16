@@ -8,9 +8,7 @@ import {
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-//O Logo da a aplicação não veio com o design no formato adequado
 import IconLogo from '../../assets/logo.svg';
-import IconAjust from '../../assets/logo2.svg';
 
 import Button from '../../components/Button';
 import Input from '../../components/Input';
@@ -39,7 +37,7 @@ export default function SignIn() {
 
     function handleSignIn() {
         if (option === 'login') {
-            navigation.navigate('Home');
+            navigation.navigate('TabRoutes');
         } else {
             Alert.alert(
                 'Sucess',
@@ -63,15 +61,6 @@ export default function SignIn() {
                                 position: 'absolute',
                                 left: 136,
                                 top: 70,
-                            }}
-                        />
-                        <IconAjust
-                            width={59}
-                            height={115}
-                            style={{
-                                position: 'absolute',
-                                left: 226,
-                                top: 106,
                             }}
                         />
                         <HeaderTop>
