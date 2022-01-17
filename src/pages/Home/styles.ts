@@ -9,7 +9,7 @@ export const Container = styled.View`
 `;
 
 export const Header = styled.View`
-background-color: ${({ theme }) => theme.colors.background};
+background-color: ${({ theme }) => theme.colors.background_light};
 width: 100%;
 height: ${RFValue(292)}px;
 padding-left: 54px;
@@ -42,5 +42,5 @@ font-weight: bold;
 font-size: ${RFValue(34)}px;
 line-height: 41px;
 
-margin: 35px 0;
+margin: 35px 0 25px;
 `;

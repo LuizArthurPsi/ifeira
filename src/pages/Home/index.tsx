@@ -3,6 +3,8 @@ import React from 'react';
 import IconTabMenu from '../../assets/Vector.svg';
 import IconCart from '../../assets/shopping-cart.svg';
 
+import InputSearch from '../../components/InputSearch';
+
 import {
     Container,
     Header,
@@ -11,7 +13,6 @@ import {
     HeaderBottom,
     Title,
 } from './styles';
-import Input from '../../components/Input';
 
 export default function Home() {
     function handleTabMenu() {}
@@ -31,7 +32,7 @@ export default function Home() {
                 </HeaderTop>
                 <HeaderBottom>
                     <Title>Delicious{'\n'}food for you</Title>
-                    <Input />
+                    <InputSearch name="search" placeholder="Search" />
                 </HeaderBottom>
             </Header>
         </Container>

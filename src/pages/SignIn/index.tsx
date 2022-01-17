@@ -60,7 +60,7 @@ export default function SignIn() {
                             style={{
                                 position: 'absolute',
                                 left: 136,
-                                top: 70,
+                                top: 90,
                             }}
                         />
                         <HeaderTop>
