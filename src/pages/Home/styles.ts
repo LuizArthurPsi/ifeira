@@ -1,4 +1,4 @@
-import { TouchableOpacity } from 'react-native';
+import { FlatList, TouchableOpacity } from 'react-native';
 import { RFValue } from 'react-native-responsive-fontsize';
 import { getStatusBarHeight } from 'react-native-status-bar-height';
 import styled, { css } from 'styled-components/native';
@@ -57,7 +57,7 @@ export const Options = styled.View`
 `;
 
 export const Option = styled(TouchableOpacity)<OptionProps>`
-    width: ${RFValue(90)}px;
+    width: ${RFValue(80)}px;
 
 `;
 
@@ -79,58 +79,13 @@ export const OptionTitle = styled.Text<OptionProps>`
     padding-bottom: 8px;
 `;
 
-export const ItemList = styled.View`
-background-color: ${({ theme }) => theme.colors.background};
-padding-top: 45px;
+export const ItemList = styled(FlatList).attrs({
+    contentContainerStyle: {
+        marginLeft: 34,
+        marginTop: 10,
+    },
+    horizontal: true,
+    showsHorizontalScrollIndicator: false,
+})``;
 
-`;
-export const ItemContainer = styled.View`
-margin-top: 40px;
-margin-left: 54px;
-width: 50%;
-height: 57%;
 
-`;
-
-export const ItemContent = styled.View`
-background-color: ${({ theme }) => theme.colors.background_light};
-align-items: center;
-border-radius: 22px;
-margin: 0 5px;
-height: 100%;
-justify-content: center;
-`;
-
-export const PhotoContainer = styled.View`
-width: 140px;
-height: 140px;
-border-radius: 90px;
-align-items: center;
-position: relative;
-top: 8px;
-`;
-
-export const ItemDescription = styled.View`
-width: 50%;
-margin: 30px 20px;
-margin-bottom: 80px;
-`;
-
-export const ItemTitle = styled.Text`
-font-weight: 600;
-font-size: ${RFValue(17)}px;
-line-height: 17px;
-margin: 10px 0;
-font-weight: bold;
-text-align: center;
-
-`;
-
-export const ItemValue = styled.Text`
-color: ${({ theme }) => theme.colors.primary_color_item};
-font-weight: bold;
-font-size: ${RFValue(14)}px;
-text-align: center;
-margin-top: 8px;
-margin-bottom: 3px;
-`;

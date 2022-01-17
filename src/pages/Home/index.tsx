@@ -26,6 +26,7 @@ import {
     ItemTitle,
     ItemValue,
 } from './styles';
+import Food from '../../components/Food';
 
 export default function Home() {
     const [option, setOption] = useState<
@@ -99,26 +100,11 @@ export default function Home() {
                     </Options>
                 </ScrollView>
             </SafeAreaView>
-            <ItemList>
-                <ItemContainer>
-                    <ItemContent>
-                        <PhotoContainer>
-                            <Image
-                                source={food_1}
-                                style={{
-                                    width: 140,
-                                    height: 140,
-                                    borderRadius: 90,
-                                }}
-                            />
-                        </PhotoContainer>
-                        <ItemDescription>
-                            <ItemTitle>Veggie tomato mix</ItemTitle>
-                            <ItemValue>N1,900</ItemValue>
-                        </ItemDescription>
-                    </ItemContent>
-                </ItemContainer>
-            </ItemList>
+            <ItemList
+                data={[1, 2, 3]}
+                keyExtractor={item => String(item)}
+                renderItem={({ item }) => <Food data={item} />}
+            />
         </Container>
     );
 }
