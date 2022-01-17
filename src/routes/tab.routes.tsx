@@ -22,10 +22,12 @@ export function TabRoutes() {
                 tabBarInactiveTintColor: theme.colors.background,
 
                 tabBarStyle: {
+                    borderTopWidth: 0,
+                    elevation: 0,
                     paddingVertical: Platform.OS === 'ios' ? 20 : 0,
                     height: 78,
                     backgroundColor: theme.colors.background,
-                    paddingBottom: 12,
+                    paddingBottom: 20,
                 },
             }}
         >
