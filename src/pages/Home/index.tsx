@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { Image, ScrollView } from 'react-native';
+import { ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import IconTabMenu from '../../assets/Vector.svg';
 import IconCart from '../../assets/shopping-cart.svg';
-import food_1 from '../../assets/food_1.png';
 
 import InputSearch from '../../components/InputSearch';
 
@@ -19,12 +18,6 @@ import {
     OptionTitle,
     Options,
     ItemList,
-    ItemContainer,
-    ItemContent,
-    PhotoContainer,
-    ItemDescription,
-    ItemTitle,
-    ItemValue,
 } from './styles';
 import Food from '../../components/Food';
 

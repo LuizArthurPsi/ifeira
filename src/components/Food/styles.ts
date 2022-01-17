@@ -24,7 +24,7 @@ height: ${RFValue(140)}px;
 border-radius: ${RFValue(90)}px;
 align-items: center;
 position: relative;
-top: ${RFValue(11)}px;;
+top: ${RFValue(18)}px;;
 `;
 
 export const ItemDescription = styled.View`
