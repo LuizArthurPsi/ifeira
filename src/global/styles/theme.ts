@@ -8,6 +8,7 @@ export default {
         input_search: '#EFEEEE',
 
         text_color: '#000000',
+        text_color_secondary: '#9A9A9D',
         placeholder: '#696969'
     },
 };
