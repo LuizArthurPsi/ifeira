@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import IconTabMenu from '../../assets/Vector.svg';
 import IconCart from '../../assets/shopping-cart.svg';
@@ -12,12 +12,27 @@ import {
     IconButton,
     HeaderBottom,
     Title,
+    Option,
+    OptionTitle,
+    Options,
 } from './styles';
+import { ScrollView } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function Home() {
+    const [option, setOption] = useState<
+        'Foods' | 'Drinks' | 'Snacks' | 'Sauce'
+    >('Foods');
+
     function handleTabMenu() {}
 
     function handleCart() {}
+
+    function handleOptionChange(
+        optionSelected: 'Foods' | 'Drinks' | 'Snacks' | 'Sauce',
+    ) {
+        setOption(optionSelected);
+    }
 
     return (
         <Container>
@@ -35,6 +50,47 @@ export default function Home() {
                     <InputSearch name="search" placeholder="Search" />
                 </HeaderBottom>
             </Header>
+            <SafeAreaView>
+                <ScrollView
+                    horizontal={true}
+                    showsHorizontalScrollIndicator={false}
+                >
+                    <Options>
+                        <Option
+                            active={option === 'Foods'}
+                            onPress={() => handleOptionChange('Foods')}
+                        >
+                            <OptionTitle active={option === 'Foods'}>
+                                Foods
+                            </OptionTitle>
+                        </Option>
+                        <Option
+                            active={option === 'Drinks'}
+                            onPress={() => handleOptionChange('Drinks')}
+                        >
+                            <OptionTitle active={option === 'Drinks'}>
+                                Drinks
+                            </OptionTitle>
+                        </Option>
+                        <Option
+                            active={option === 'Snacks'}
+                            onPress={() => handleOptionChange('Snacks')}
+                        >
+                            <OptionTitle active={option === 'Snacks'}>
+                                Snacks
+                            </OptionTitle>
+                        </Option>
+                        <Option
+                            active={option === 'Sauce'}
+                            onPress={() => handleOptionChange('Sauce')}
+                        >
+                            <OptionTitle active={option === 'Sauce'}>
+                                Sauce
+                            </OptionTitle>
+                        </Option>
+                    </Options>
+                </ScrollView>
+            </SafeAreaView>
         </Container>
     );
 }
