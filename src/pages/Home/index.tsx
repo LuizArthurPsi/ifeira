@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
+import { Image, ScrollView } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 import IconTabMenu from '../../assets/Vector.svg';
 import IconCart from '../../assets/shopping-cart.svg';
+import food_1 from '../../assets/food_1.png';
 
 import InputSearch from '../../components/InputSearch';
 
@@ -15,9 +18,14 @@ import {
     Option,
     OptionTitle,
     Options,
+    ItemList,
+    ItemContainer,
+    ItemContent,
+    PhotoContainer,
+    ItemDescription,
+    ItemTitle,
+    ItemValue,
 } from './styles';
-import { ScrollView } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function Home() {
     const [option, setOption] = useState<
@@ -91,6 +99,26 @@ export default function Home() {
                     </Options>
                 </ScrollView>
             </SafeAreaView>
+            <ItemList>
+                <ItemContainer>
+                    <ItemContent>
+                        <PhotoContainer>
+                            <Image
+                                source={food_1}
+                                style={{
+                                    width: 140,
+                                    height: 140,
+                                    borderRadius: 90,
+                                }}
+                            />
+                        </PhotoContainer>
+                        <ItemDescription>
+                            <ItemTitle>Veggie tomato mix</ItemTitle>
+                            <ItemValue>N1,900</ItemValue>
+                        </ItemDescription>
+                    </ItemContent>
+                </ItemContainer>
+            </ItemList>
         </Container>
     );
 }

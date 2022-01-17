@@ -15,7 +15,7 @@ export const Container = styled.View`
 export const Header = styled.View`
 background-color: ${({ theme }) => theme.colors.background};
 width: 100%;
-height: ${RFValue(292)}px;
+height: ${RFValue(270)}px;
 padding-left: 54px;
 padding-right: 42px;
 
@@ -28,7 +28,7 @@ flex-direction: row;
 justify-content: space-between;
 
 margin-top: ${getStatusBarHeight() + 34}px;
-
+margin-bottom: 5px;
 `;
 
 export const IconButton = styled(TouchableOpacity)`
@@ -42,10 +42,10 @@ export const HeaderBottom = styled.View`
 export const Title = styled.Text`
 font-style: normal;
 font-weight: bold;
-font-size: ${RFValue(34)}px;
-line-height: 41px;
+font-size: ${RFValue(27)}px;
+line-height: 35px;
 
-margin: 35px 0 25px;
+margin: 25px 0;
 `;
 
 export const Options = styled.View`
@@ -71,10 +71,66 @@ export const OptionTitle = styled.Text<OptionProps>`
     `}
 
     font-weight: 600;
-    font-size: ${RFValue(18)}px;
-    padding-bottom: 10px;
-
+    font-size: ${RFValue(15)}px;
     text-align: center;
-    line-height: 21px;
     margin-bottom: 16px;
+    letter-spacing: .6px;
+
+    padding-bottom: 8px;
+`;
+
+export const ItemList = styled.View`
+background-color: ${({ theme }) => theme.colors.background};
+padding-top: 45px;
+
+`;
+export const ItemContainer = styled.View`
+margin-top: 40px;
+margin-left: 54px;
+width: 50%;
+height: 57%;
+
+`;
+
+export const ItemContent = styled.View`
+background-color: ${({ theme }) => theme.colors.background_light};
+align-items: center;
+border-radius: 22px;
+margin: 0 5px;
+height: 100%;
+justify-content: center;
+`;
+
+export const PhotoContainer = styled.View`
+width: 140px;
+height: 140px;
+border-radius: 90px;
+align-items: center;
+position: relative;
+top: 8px;
+`;
+
+export const ItemDescription = styled.View`
+width: 50%;
+margin: 30px 20px;
+margin-bottom: 80px;
+`;
+
+export const ItemTitle = styled.Text`
+font-weight: 600;
+font-size: ${RFValue(17)}px;
+line-height: 17px;
+margin: 10px 0;
+font-weight: bold;
+text-align: center;
+
+`;
+
+export const ItemValue = styled.Text`
+color: ${({ theme }) => theme.colors.primary_color_item};
+font-weight: bold;
+font-size: ${RFValue(14)}px;
+text-align: center;
+margin-top: 8px;
+margin-bottom: 3px;
 `;

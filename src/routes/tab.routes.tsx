@@ -37,9 +37,10 @@ export function TabRoutes() {
                 options={{
                     tabBarIcon: ({ color }) => (
                         <HomeSvg
-                            width={27}
-                            height={27}
+                            width={22}
+                            height={22}
                             fill={color}
+                            color={color}
                             style={{ marginTop: 6 }}
                         />
                     ),
@@ -51,8 +52,8 @@ export function TabRoutes() {
                 options={{
                     tabBarIcon: ({ color }) => (
                         <FavSvg
-                            width={27}
-                            height={27}
+                            width={22}
+                            height={22}
                             fill={color}
                             style={{ marginTop: 6 }}
                         />
@@ -65,8 +66,8 @@ export function TabRoutes() {
                 options={{
                     tabBarIcon: ({ color }) => (
                         <UserSvg
-                            width={27}
-                            height={27}
+                            width={22}
+                            height={22}
                             fill={color}
                             style={{ marginTop: 6 }}
                         />
@@ -79,8 +80,8 @@ export function TabRoutes() {
                 options={{
                     tabBarIcon: ({ color }) => (
                         <HistorySvg
-                            width={27}
-                            height={27}
+                            width={22}
+                            height={22}
                             fill={color}
                             style={{ marginTop: 6 }}
                         />

@@ -12,6 +12,6 @@ export const Container = styled.View`
 `;
 
 export const TextInput = styled.TextInput`
-    color: ${({ theme }) => theme.colors.text_color};
+    color: ${({ theme }) => theme.colors.text_color_secondary};
     font-size: 17px;
 `;
