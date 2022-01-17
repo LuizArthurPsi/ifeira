@@ -37,11 +37,10 @@ export function TabRoutes() {
                 options={{
                     tabBarIcon: ({ color }) => (
                         <HomeSvg
-                            width={22}
-                            height={22}
+                            width={21}
+                            height={21}
                             fill={color}
                             color={color}
-                            style={{ marginTop: 6 }}
                         />
                     ),
                 }}
@@ -51,12 +50,7 @@ export function TabRoutes() {
                 component={Home}
                 options={{
                     tabBarIcon: ({ color }) => (
-                        <FavSvg
-                            width={22}
-                            height={22}
-                            fill={color}
-                            style={{ marginTop: 6 }}
-                        />
+                        <FavSvg width={21} height={21} fill={color} />
                     ),
                 }}
             />
@@ -65,12 +59,7 @@ export function TabRoutes() {
                 component={Home}
                 options={{
                     tabBarIcon: ({ color }) => (
-                        <UserSvg
-                            width={22}
-                            height={22}
-                            fill={color}
-                            style={{ marginTop: 6 }}
-                        />
+                        <UserSvg width={21} height={21} fill={color} />
                     ),
                 }}
             />
@@ -79,12 +68,7 @@ export function TabRoutes() {
                 component={Home}
                 options={{
                     tabBarIcon: ({ color }) => (
-                        <HistorySvg
-                            width={22}
-                            height={22}
-                            fill={color}
-                            style={{ marginTop: 6 }}
-                        />
+                        <HistorySvg width={21} height={21} fill={color} />
                     ),
                 }}
             />

@@ -11,4 +11,7 @@ export default {
         text_color_secondary: '#9A9A9D',
         placeholder: '#696969'
     },
-};
+    fonts: {
+        text: 'FontsFree-Net-SF-Pro-Rounded-Regular',
+        rounded: 'FontsFree-Net-SFProText-Regular',
+}};

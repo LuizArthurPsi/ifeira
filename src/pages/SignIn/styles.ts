@@ -7,7 +7,7 @@ interface OptionProps {
 }
 
 export const Container = styled.View`
-    width: 100%;
+    width: ${RFValue(100)}%;
     background-color: ${({ theme }) => theme.colors.background};
 
 `;
@@ -15,18 +15,18 @@ export const Container = styled.View`
 export const Header = styled.View`
     background-color: ${({ theme }) => theme.colors.background_light};
 
-    width: 100%;
-    height: ${RFValue(300)}px;
+    width: ${RFValue(87)}%;
+    height: ${RFValue(290)}px;
 
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: ${RFValue(30)}px;
+    border-bottom-right-radius: ${RFValue(30)}px;
     align-items: center;
     justify-content: flex-end;
 
 `;
-
+//distancia login e signup
 export const HeaderTop = styled.View`
-    width: 100%;
+    width: ${RFValue(89)}%;
 `;
 
 export const Options = styled.View`
@@ -36,9 +36,9 @@ justify-content: space-around;
 `;
 
 export const Option = styled(TouchableOpacity)<OptionProps>`
-    width: ${RFValue(90)}px;
+    width: ${RFValue(105)}px;
 ${({ active }) => active && css`
-    border-bottom-width: 3px;
+    border-bottom-width: ${RFValue(3)}px;
     border-bottom-color: ${({ theme }) => theme.colors.primary_color_item};
 `}
 `;
@@ -46,48 +46,57 @@ ${({ active }) => active && css`
 export const OptionTitle = styled.Text<OptionProps>`
 color: ${({ theme }) => theme.colors.text_color};
 
-font-weight: 600;
-font-size: ${RFValue(18)}px;
+font-weight: bold;
+font-size: ${RFValue(15)}px;
+font-family: ${({ theme }) => theme.fonts.text};
 
 text-align: center;
-line-height: 21px;
-margin-bottom: 16px;
+line-height: ${RFValue(15)}px;
+letter-spacing: .4px;
+
+margin-bottom: ${RFValue(10)}px;
 `;
 
 export const Content = styled.View`
+width: ${RFValue(82)}%;
+height: ${RFValue(55)}%;
 background-color: ${({ theme }) => theme.colors.background};
-padding: 50px 50px 700px;
-justify-content: space-between;
+padding: 0 ${RFValue(50)}px;
+justify-content: space-evenly;
 
 `;
 
 export const Section = styled.View`
-height: 50%;
+height: ${RFValue(50)}%;
 `;
 
 export const InputTitle = styled.Text`
 color: ${({ theme }) => theme.colors.text_color};
 opacity: 0.4;
 
-font-weight: 600;
-font-size: ${RFValue(15)}px;
+letter-spacing: .4px;
+font-weight: bold;
+font-size: ${RFValue(12)}px;
+font-family: ${({ theme }) => theme.fonts.text};
 
 text-align: left;
-line-height: 18px;
+line-height: ${RFValue(12)}px;
+margin-top: ${RFValue(9)}px;
 `;
 
 export const ForgotPassword = styled(TouchableOpacity)`
-margin-bottom: 45px;
 `;
 
 export const ForgotPasswordText = styled.Text`
 color: ${({ theme }) => theme.colors.primary_color_item};
 
-font-weight: 600;
-font-size: ${RFValue(17)}px;
+letter-spacing: .4px;
+font-weight: bold;
+font-size: ${RFValue(13)}px;
+font-family: ${({ theme }) => theme.fonts.text};
 
 text-align: left;
-line-height: 20px;
+line-height: ${RFValue(14)}px;
 `;
 
 

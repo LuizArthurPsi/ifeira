@@ -7,9 +7,9 @@ interface ButtonProps extends TouchableOpacityProps {
 }
 
 export const Container = styled(TouchableOpacity)<ButtonProps>`
-    width: 100%;
-    height: 60px;
-    border-radius: 26px;
+    width: ${RFValue(100)}%;
+    height: ${RFValue(55)}px;
+    border-radius: ${RFValue(23)}px;
 
     justify-content: center;
     align-items: center;
@@ -18,9 +18,11 @@ export const Container = styled(TouchableOpacity)<ButtonProps>`
 `;
 
 export const Title = styled.Text`
-    font-weight: 600;
-    line-height: 20px;
-    font-size: ${RFValue(17)}px;
+    letter-spacing: .4px;
+    ;
+    line-height: ${RFValue(14)}px;
+    font-size: ${RFValue(14)}px;
+    font-family: ${({ theme }) => theme.fonts.text};
 
     color:${({ theme }) => theme.colors.background};
 `;
